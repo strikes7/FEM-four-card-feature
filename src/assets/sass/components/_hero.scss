@@ -1,0 +1,24 @@
+@use "../abstract/" as *;
+
+.hero {
+  max-width: toRem(500);
+  margin-block: toRem(62) toRem(60);
+  text-align: center;
+  margin-inline: 0.25rem;
+
+  &__title {
+    color: $clr-neutral-100;
+    font-size: $fs-800;
+
+    & .thin {
+      display: block;
+      font-weight: 200;
+    }
+  }
+
+  &__text {
+    color: $clr-neutral-200;
+    font-size: $fs-500;
+    line-height: 1.6;
+  }
+}

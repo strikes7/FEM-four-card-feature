@@ -1,0 +1,77 @@
+@use "../abstract/" as *;
+
+.tools {
+  max-width: toRem(1440);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  justify-content: center;
+}
+
+.tool {
+  padding: 2rem;
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-radius: 0.3rem;
+  background-color: $clr-neutral-400;
+  box-shadow: 0 1rem 1.5rem -0.75rem $clr-box-shadow-100;
+
+  &:nth-child(1) {
+    border-top-color: $clr-primary-200;
+  }
+
+  &:nth-child(2) {
+    border-top-color: $clr-primary-100;
+  }
+
+  &:nth-child(3) {
+    border-top-color: $clr-primary-300;
+  }
+
+  &:nth-child(4) {
+    border-top-color: $clr-primary-400;
+  }
+
+  &__title {
+    margin-block: 0;
+    line-height: 1;
+    color: $clr-neutral-100;
+  }
+
+  &__text {
+    color: $clr-neutral-200;
+    margin-block: 0.5rem 1.75rem;
+  }
+
+  &__decorative-image {
+    display: block;
+    margin-inline: auto 0;
+    height: 4rem;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 62em) {
+  .tools {
+    grid-template-columns: repeat(3, minmax(0, toRem(350)));
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .tool {
+    &:nth-child(1) {
+      grid-row: 2 / span 2;
+    }
+
+    &:nth-child(2) {
+      grid-row: 1 / span 2;
+    }
+
+    &:nth-child(3) {
+      grid-row: 3 / span 2;
+    }
+
+    &:nth-child(4) {
+      grid-row: 2 / span 2;
+    }
+  }
+}
